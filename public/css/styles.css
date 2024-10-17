@@ -1,47 +1,203 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'MN DOUBLE', sans-serif;
+    background: linear-gradient(135deg, #000000, #b22222);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'MN DOUBLE';
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ff6347;
 }
 
 .login-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+    text-align: center;
     width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 80px;
 }
 
 h1 {
-    text-align: center;
+    color: #ff6347;
+    font-size: 2rem;
     margin-bottom: 20px;
+    animation: colorChange 3s infinite;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
+.input-container {
+    position: relative;
+    margin-bottom: 15px;
 }
 
-input {
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #ff4500;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-family: 'MN DOUBLE', sans-serif;
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px 10px 10px 40px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+    transform: scale(1.05);
+}
+
+input[type="text"]:focus + .icon,
+input[type="password"]:focus + .icon {
+    transform: translateY(-15%);
 }
 
 button {
+    font-family: 'MN DOUBLE', sans-serif;
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #ff4500;
     border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #b22222;
 }
 
 #message {
     margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 100px;
+    height: auto;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ffcc00;
+    }
+    33% {
+        color: #ff4500;
+    }
+    66% {
+        color: #ff6347;
+    }
+    100% {
+        color: #ffcc00;
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    max-width: 90%;
+    text-align: left;
+    color: #000;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    color: #ff6347;
+}
+
+.popup-content p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.close-btn {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
     text-align: center;
 }
+
+.close-btn:hover {
+    background-color: #b22222;
+}
+

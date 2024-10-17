@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Futuristic Login Page</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="login-container">
         <h1>Login</h1>
         <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <img src="https://tuipied-my.sharepoint.com/personal/suwaphat_tor_dome_tu_ac_th/Documents/pic/PNG%20image.png" alt="Logo" class="logo">
+            
+            <div class="input-container">
+                <box-icon name='user' class="icon"></box-icon>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            
+            <div class="input-container">
+                <box-icon name='lock-alt' type='solid' class="icon"></box-icon>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            
             <button type="button" onclick="submitLogin()">Login</button>
-            <button type="button" onclick="call_REST_API_Hello()">Hello</button>
         </form>
+        
         <p id="message"></p>
     </div>
-    <script src="js/script.js"></script>
 </body>
 </html>
